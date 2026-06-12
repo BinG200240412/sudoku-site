@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>支持 · Support — sudoku</title>
+<meta name="description" content="sudoku 使用帮助与联系方式。" />
+<link rel="icon" href="icon.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#F4F1EA; --surface:#FBF9F4; --ink:#2A2723; --ink-mid:#5A534A;
+    --ink-soft:#9A9183; --line:#E7E1D4; --line2:#CDC4B3; --clay:#B26A4C; --clay-deep:#9A5538;
+  }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'DM Mono', ui-monospace, monospace; line-height:1.75; font-size:14px;
+    -webkit-font-smoothing:antialiased;
+    padding:56px 22px 96px;
+    background-image:radial-gradient(120% 60% at 50% -8%, rgba(255,255,255,.5), transparent 60%);
+  }
+  .wrap{ max-width:600px; margin:0 auto; }
+  .back{ display:inline-block; font-size:11px; letter-spacing:1.6px; text-transform:uppercase;
+    color:var(--ink-soft); text-decoration:none; margin-bottom:30px; }
+  .back:hover{ color:var(--clay-deep); }
+  .serif{ font-family:'Fraunces', Georgia, serif; font-weight:360; }
+  h1{ font-family:'Fraunces', Georgia, serif; font-weight:340; font-size:38px; letter-spacing:-.01em; line-height:1; }
+  h1 .dot{ color:var(--clay); }
+  .lede{ color:var(--ink-mid); font-size:15px; margin-top:16px; }
+  h2{ font-family:'Fraunces', Georgia, serif; font-weight:360; font-size:22px; margin:44px 0 10px; }
+  p{ color:var(--ink-mid); margin-bottom:12px; }
+  p strong{ color:var(--ink); font-weight:500; }
+  .q{ color:var(--ink); font-weight:500; margin-top:22px; margin-bottom:4px; }
+  a{ color:var(--clay-deep); }
+  .mail{
+    display:inline-block; margin-top:8px; padding:12px 20px; background:var(--surface);
+    border:1px solid var(--line2); border-radius:12px; color:var(--clay-deep);
+    text-decoration:none; font-size:14px; letter-spacing:.3px;
+  }
+  .mail:hover{ border-color:var(--clay); }
+  hr{ border:none; border-top:1px solid var(--line); margin:56px 0; }
+  .foot{ margin-top:64px; padding-top:22px; border-top:1px solid var(--line);
+    font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--ink-soft); }
+  .foot .dot{ color:var(--clay); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="./">← sudoku<span style="color:var(--clay)">.</span></a>
+
+  <!-- ───────── 中文 ───────── -->
+  <h1>支持<span class="dot">.</span></h1>
+  <p class="lede">需要帮助，或者只是想说点什么？都在这里。</p>
+
+  <h2>常见问题</h2>
+
+  <div class="q">怎么玩？</div>
+  <p>选择一个空格，点下方数字填入。每一行、每一列、每个 3×3 宫内，1–9 各出现一次即胜。新手可在开场选择「我是新手」，会有真棋盘上的分步教程带你上手。</p>
+
+  <div class="q">四档难度有什么区别？</div>
+  <p>简单 / 中等 / 困难 / 大师，逐级提升。大师级是世界公认的经典残局与分级题库，挑战极限。</p>
+
+  <div class="q">AI 导师怎么用？</div>
+  <p>解题卡住时，导师会在棋盘上高亮演示下一步的逻辑（裸单、隐单、裸对、区块指向、X-Wing 等），教你怎么想，而不只是给答案。</p>
+
+  <div class="q">「纸上模式」是什么？</div>
+  <p>像在报纸上解题：不限错误、不标红、不高亮，填满后才揭晓对错——对错全凭自己判断。可在开场选择，或在设置里开启。</p>
+
+  <div class="q">我换了手机 / 重装了 App，购买怎么恢复？</div>
+  <p>用同一个 Apple ID，在解锁页点「恢复购买 / Restore」即可免费恢复。一次买断，永久有效。</p>
+
+  <div class="q">我的数据安全吗？</div>
+  <p>非常安全——App 不收集、不上传任何数据，一切都只存在你的设备本地。详见 <a href="privacy.html">隐私政策</a>。</p>
+
+  <h2>联系我们</h2>
+  <p>没找到答案，或者有建议、想报告问题？写信给我，我会亲自回复。</p>
+  <a class="mail" href="mailto:stewertbrostoff847@gmail.com?subject=sudoku%20支持">stewertbrostoff847@gmail.com</a>
+
+  <hr />
+
+  <!-- ───────── English ───────── -->
+  <h1 class="serif">Support</h1>
+  <p class="lede">Need a hand, or just want to say something? It's all here.</p>
+
+  <h2>FAQ</h2>
+
+  <div class="q">How do I play?</div>
+  <p>Tap an empty cell, then tap a number below to fill it. Fill the grid so every row, every column, and every 3×3 box contains 1–9 exactly once. New to sudoku? Choose "I'm new" at the start for a step-by-step tutorial right on the board.</p>
+
+  <div class="q">What's the difference between the difficulties?</div>
+  <p>Easy / Medium / Hard / Master, rising in order. Master features world-renowned classic puzzles and a graded bank, for the very edge of the game.</p>
+
+  <div class="q">How does the AI coach work?</div>
+  <p>Stuck? The coach highlights the logic of your next move right on the board — naked singles, hidden singles, naked pairs, pointing pairs, X-Wing and more — teaching you how to think, not just handing you the answer.</p>
+
+  <div class="q">What is "Paper mode"?</div>
+  <p>Solve like it's newsprint: no mistake limit, nothing flagged, nothing highlighted. The verdict only appears once the grid is full — it's yours alone. Choose it at the start, or turn it on in Settings.</p>
+
+  <div class="q">I got a new phone / reinstalled. How do I restore my purchase?</div>
+  <p>With the same Apple ID, tap "Restore" on the unlock screen to restore for free. Pay once, yours forever.</p>
+
+  <div class="q">Is my data safe?</div>
+  <p>Completely — the app collects and uploads nothing; everything stays on your device. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>Contact</h2>
+  <p>Didn't find your answer, or have a suggestion or bug to report? Drop me a line — I reply personally.</p>
+  <a class="mail" href="mailto:stewertbrostoff847@gmail.com?subject=sudoku%20Support">stewertbrostoff847@gmail.com</a>
+
+  <div class="foot">sudoku<span class="dot">.</span> · 凡事有解 · Every puzzle has an answer</div>
+</div>
+</body>
+</html>
