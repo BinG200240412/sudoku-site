@@ -83,7 +83,10 @@
   .eyebrow{ font-size:11px; letter-spacing:3.4px; text-transform:uppercase; color:var(--ink-soft); }
   .eyebrow .dot{ color:var(--clay); }
   .wordmark{
-    font-family:'Fraunces', Georgia, serif; font-weight:340;   /* brand wordmark — Fraunces, like the app */
+    /* brand wordmark — matches the app exactly: Fraunces display cut, opsz 144, wght 380 */
+    font-family:'Fraunces', Georgia, serif;
+    font-variation-settings:"wght" 380, "opsz" 144, "SOFT" 0, "WONK" 0;
+    font-weight:380;
     font-size:clamp(52px, 15.5vw, 78px); line-height:.92; letter-spacing:-.022em;
     margin-top:15px; color:var(--ink);
   }
@@ -215,7 +218,7 @@
     <!-- CTA buttons -->
     <div class="cta-zone" data-intro>
       <!-- App Store (primary — placeholder until approved) -->
-      <a class="cta primary" id="cta-store" href="#">
+      <a class="cta primary" id="cta-store" href="https://apps.apple.com/cn/app/sudoku-by-bing/id6775198044" target="_blank" rel="noopener">
         <span id="cta-store-text" class="zh-txt">在 App Store 下载</span>
         <span id="cta-store-text-en" class="en-txt">Download on the App Store</span>
         <span class="arrow">→</span>
