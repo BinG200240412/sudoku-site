@@ -4,10 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>sudoku — 极简数独</title>
-<meta name="description" content="凡事有解。一款极简、安静的数独。纸白底色，莫兰迪陶土色，Fraunces 衬线标题。四档难度，从入门到世界经典残局。" />
+<meta name="description" content="凡事有解。一款极简、安静的数独。纸白底色，莫兰迪鼠尾绿，Fraunces 衬线标题。五档难度，从入门到世界难题。" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="sudoku — 极简数独" />
-<meta property="og:description" content="凡事有解。Every puzzle has an answer. 四档难度，含世界经典残局。App Store 现已上线。" />
+<meta property="og:description" content="凡事有解。Every puzzle has an answer. 五档难度，含世界难题。App Store 现已上线。" />
 <meta property="og:image" content="icon.png" />
 <meta name="theme-color" content="#F4F1EA" />
 <link rel="icon" href="icon.png" />
@@ -170,6 +170,17 @@
   footer a:hover{ color:var(--clay-deep); }
   .foot-links{ margin-bottom:18px; }
 
+  /* WeChat's in-app browser blocks App Store jumps — guide the user to open in a real browser */
+  .wxmask{ position:fixed; inset:0; z-index:9999; background:rgba(20,18,16,.92);
+    display:flex; flex-direction:column; align-items:flex-end; padding:18px 26px;
+    color:#F4F1EA; -webkit-tap-highlight-color:transparent; }
+  .wxmask .arrow{ font-size:66px; line-height:1; margin-right:6px; color:var(--clay); }
+  .wxmask .tip{ align-self:center; margin:52px auto 0; max-width:320px; text-align:center;
+    font-family:'DM Mono','GenWanMin',monospace; font-size:15px; line-height:2.1; letter-spacing:.4px; }
+  .wxmask .tip b{ color:var(--clay); font-weight:500; }
+  .wxmask .dismiss{ align-self:center; margin-top:28px; font-size:10.5px; letter-spacing:2px;
+    text-transform:uppercase; color:rgba(244,241,234,.5); }
+
   @media (prefers-reduced-motion: reduce){
     .tiles{ opacity:1 !important; }
     .grid{ display:none; }
@@ -237,16 +248,16 @@
         <div class="sec">§ I</div>
         <div>
           <h3 class="serif">
-            <span class="zh-txt">四档难度</span>
-            <span class="en-txt">Four levels</span>
+            <span class="zh-txt">五档难度</span>
+            <span class="en-txt">Five levels</span>
           </h3>
           <p>
-            <span class="zh-txt">从轻松入门，到 Master —— 一组流传世界的高难残局。</span>
-            <span class="en-txt">From gentle warm-ups to master classics that puzzled the world.</span>
+            <span class="zh-txt">从轻松入门，到「世界难题」—— 一组流传世界的高难残局。</span>
+            <span class="en-txt">From gentle warm-ups to the World's Hardest — classic puzzles that stumped the world.</span>
           </p>
           <div class="en label">
-            <span class="zh-txt">Four levels · incl. master classics</span>
-            <span class="en-txt">Easy to Master · classic puzzles included</span>
+            <span class="zh-txt">五档 · 含世界难题</span>
+            <span class="en-txt">Five levels · incl. World's Hardest</span>
           </div>
         </div>
       </div>
@@ -363,6 +374,16 @@
     </footer>
   </div>
 
+  <!-- WeChat-only: guide to open in a real browser (WeChat blocks App Store jumps) -->
+  <div class="wxmask" id="wxmask" hidden>
+    <div class="arrow">↗</div>
+    <div class="tip">
+      <span class="zh-txt">微信里打不开 App Store。<br>请点右上角 <b>· · ·</b><br>选择「<b>在默认浏览器打开</b>」<br>再点下载即可。</span>
+      <span class="en-txt">The App Store won't open inside WeChat.<br>Tap <b>· · ·</b> (top-right)<br>→ <b>Open in Browser</b>,<br>then tap download.</span>
+    </div>
+    <div class="dismiss"><span class="zh-txt">轻触关闭</span><span class="en-txt">tap to close</span></div>
+  </div>
+
 <script>
   // ═══ App Store link (placeholder — replace after review approval) ═══
   const STORE_LINK_ZH = "https://apps.apple.com/cn/app/sudoku-by-bing/id6775198044"; // 中文 → 国区商店页
@@ -404,6 +425,16 @@
   })();
 
   wireStore();
+
+  // WeChat's in-app browser silently blocks App Store links → show a "open in browser" guide.
+  (function(){
+    if (!/MicroMessenger/i.test(navigator.userAgent)) return;
+    var mask = document.getElementById("wxmask");
+    function guide(e){ if (e) e.preventDefault(); mask.hidden = false; }
+    var cta = document.getElementById("cta-store"); if (cta) cta.addEventListener("click", guide);
+    var foot = document.getElementById("foot-store"); if (foot) foot.addEventListener("click", guide);
+    mask.addEventListener("click", function(){ mask.hidden = true; });
+  })();
 
   // ═══ animated hero board (unchanged from the original — GSAP four-act sequence) ═══
   (function board(){
